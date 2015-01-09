@@ -1,0 +1,65 @@
+*autoft.txt*	Set the filetype automatically
+
+Version: 0.0
+Author: itchyny (https://github.com/itchyny)
+License: MIT License
+Repository: https://github.com/itchyny/vim-autoft
+Last Change: 2015/01/08 14:40:40.
+
+CONTENTS					*autoft-contents*
+
+Introduction				|autoft-introduction|
+Options					|autoft-options|
+Examples				|autoft-examples|
+Changelog				|autoft-changelog|
+
+==============================================================================
+INTRODUCTION					*autoft-introduction*
+This *autoft* ( *vim-autoft* *autoft.vim* ) plugin sets the filetype automatically
+if it is not set. How troublesome to set the filetype when you copied a code
+from an external application! This plugin helps you set the 'filetype' for a
+piece of code you copied from a web browser or from another buffer of Vim.
+This plugin checks the patterns of your configuration on CursorHold/CursorHoldI
+events so the delayed time depends on the value of 'updatetime'.
+
+------------------------------------------------------------------------------
+OPTIONS						*autoft-options*
+
+g:autoft_enable					*g:autoft_enable*
+b:autoft_enable					*b:autoft_enable*
+	Enables |autoft|.
+	The default value is 1.
+
+g:autoft_config					*g:autoft_config*
+	A list of dictionaries of filetypes and patterns.
+	Each entry should have the following keys.
+		filetype: which |autoft| sets 'filetype' to
+		pattern:  a regular expression
+	The default value is [].
+
+g:autoft_maxline				*g:autoft_maxline*
+	The number of lines from the top to be checked the patterns.
+	The default value is 10.
+
+g:autoft_maxcol					*g:autoft_maxcol*
+	The number of columns to be checked the patterns.
+	The default value is 80.
+
+------------------------------------------------------------------------------
+EXAMPLES					*autoft-examples*
+>
+    let g:autoft_config = [
+          \ { 'filetype': 'html' , 'pattern': '<\%(!DOCTYPE\|html\|head\|script\)' },
+          \ { 'filetype': 'c'    , 'pattern': '#\%(include\|define\) ' },
+          \ { 'filetype': 'diff' , 'pattern': '^diff -' },
+          \ { 'filetype': 'sh'   , 'pattern': '^#!.*\%(\<sh\>\|\<bash\>\)\s*$' },
+          \ ]
+<
+==============================================================================
+CHANGELOG					*autoft-changelog*
+
+0.0	2014-01-10
+	- Initial commit.
+
+==============================================================================
+vim:tw=78:sw=4:ts=8:ft=help:norl:noet:
