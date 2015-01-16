@@ -4,7 +4,7 @@ Version: 0.0
 Author: itchyny (https://github.com/itchyny)
 License: MIT License
 Repository: https://github.com/itchyny/vim-autoft
-Last Change: 2015/01/13 20:51:52.
+Last Change: 2015/01/16 12:45:32.
 
 CONTENTS					*autoft-contents*
 
@@ -50,7 +50,7 @@ EXAMPLES					*autoft-examples*
 >
     let g:autoft_config = [
           \ { 'filetype': 'html' , 'pattern': '<\%(!DOCTYPE\|html\|head\|script\)' },
-          \ { 'filetype': 'c'    , 'pattern': '\s*#\s*\%(include\|define\)\s' },
+          \ { 'filetype': 'c'    , 'pattern': '^\s*#\s*\%(include\|define\)\s' },
           \ { 'filetype': 'diff' , 'pattern': '^diff -' },
           \ { 'filetype': 'sh'   , 'pattern': '^#!.*\%(\<sh\>\|\<bash\>\)\s*$' },
           \ ]
