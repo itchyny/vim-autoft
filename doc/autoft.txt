@@ -4,7 +4,7 @@ Version: 0.1
 Author: itchyny (https://github.com/itchyny)
 License: MIT License
 Repository: https://github.com/itchyny/vim-autoft
-Last Change: 2015/02/25 23:54:19.
+Last Change: 2015/02/25 23:57:12.
 
 CONTENTS					*autoft-contents*
 
@@ -58,10 +58,10 @@ EXAMPLES					*autoft-examples*
 ==============================================================================
 CHANGELOG					*autoft-changelog*
 
-0.1	2014-02-25
+0.1	2015-02-25
 	- Quick return.
 
-0.0	2014-01-10
+0.0	2015-01-10
 	- Initial commit.
 
 ==============================================================================
