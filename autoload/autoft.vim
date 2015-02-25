@@ -2,7 +2,7 @@
 " Filename: autoload/autoft.vim
 " Author: itchyny
 " License: MIT License
-" Last Change: 2015/01/08 00:44:13.
+" Last Change: 2015/02/25 23:54:58.
 " =============================================================================
 
 let s:save_cpo = &cpo
@@ -21,22 +21,15 @@ function! autoft#set() abort
     if len(lines) == 1 && lines[0] ==# ''
       return
     endif
-    let filetype = ''
     let ftpat = {}
     for ftpat in get(g:, 'autoft_config', [])
       for line in lines
-        if line =~# ftpat.pattern
-          let filetype = ftpat.filetype
-          break
+        if line =~# ftpat.pattern && ftpat.filetype !=# ''
+          let &l:filetype = ftpat.filetype
+          return
         endif
       endfor
-      if filetype !=# ''
-        break
-      endif
     endfor
-    if filetype !=# ''
-      let &l:filetype = filetype
-    endif
   catch
     call autoft#error(v:exception, ftpat)
   finally
