@@ -2,14 +2,14 @@
 " Filename: autoload/autoft.vim
 " Author: itchyny
 " License: MIT License
-" Last Change: 2015/02/25 23:54:58.
+" Last Change: 2017/11/11 12:54:44.
 " =============================================================================
 
 let s:save_cpo = &cpo
 set cpo&vim
 
 function! autoft#set() abort
-  if &l:filetype !=# '' || !get(b:, 'autoft_enable', get(g:, 'autoft_enable', 1))
+  if &l:filetype !=# '' || &l:buftype !=# '' || !get(b:, 'autoft_enable', get(g:, 'autoft_enable', 1))
     return
   endif
   try
